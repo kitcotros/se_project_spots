@@ -2,7 +2,9 @@
   padding: 60px 0;
   margin: 0;
   text-align: center;
+  font-family: "Poppins", Arial, sans-serif;
   font-weight: 400;
-  font-style: regular;
+  font-style: normal;
   font-size: 16px;
+  color: #212121;
 }

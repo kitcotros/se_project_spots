@@ -27,7 +27,7 @@
 .profile__head-text-name {
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 500;
-  font-style: medium;
+  font-style: normal;
   font-size: 32px;
   line-height: 1;
   color: #212121;
@@ -37,7 +37,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
-  line-clamp: 3;
   -webkit-box-orient: vertical;
   max-width: 420px;
 }
@@ -47,7 +46,7 @@
   margin: 0;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 500;
-  font-style: medium;
+  font-style: normal;
   font-size: 16px;
   line-height: 1;
   color: #212121;
@@ -56,7 +55,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
-  line-clamp: 3;
   -webkit-box-orient: vertical;
   max-width: 420px;
 }
