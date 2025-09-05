@@ -29,7 +29,7 @@
   font-weight: 500;
   font-style: normal;
   font-size: 32px;
-  line-height: 1;
+  line-height: 1.2;
   color: #212121;
   padding: 0 0 12px;
   margin: 0;
@@ -48,7 +48,7 @@
   font-weight: 500;
   font-style: normal;
   font-size: 16px;
-  line-height: 1;
+  line-height: 1.2;
   color: #212121;
   opacity: 70%;
   display: -webkit-box;
