@@ -132,7 +132,7 @@
             <h2 class="modal__title">Edit profile</h2>
             <button type="button" class="modal__close-btn"></button>
           </div>
-          <form class="modal__form">
+          <form class="modal__form" id="profile-form">
             <label for="profile-name-input" class="modal__label">
               Name
               <input
@@ -151,7 +151,13 @@
                 placeholder="Describe yourself"
               />
             </label>
-            <button type="submit" class="modal__submit-btn">Save</button>
+            <button
+              type="submit"
+              class="modal__submit-btn"
+              id="profile-form-button"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
@@ -161,7 +167,7 @@
             <h2 class="modal__title">New post</h2>
             <button type="button" class="modal__close-btn"></button>
           </div>
-          <form class="modal__form">
+          <form class="modal__form" id="post-form">
             <label for="card-image-input" class="modal__label">
               Image link
               <input
@@ -180,7 +186,7 @@
                 placeholder="Type your caption"
               />
             </label>
-            <button type="submit" class="modal__submit-btn">Save</button>
+            <button type="submit" class="modal__submit-btn" id="post-form-button">Save</button>
           </form>
         </div>
       </div>
