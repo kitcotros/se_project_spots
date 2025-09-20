@@ -116,7 +116,66 @@
   cursor: pointer;
 }
 
+.modal__image {
+  max-width: 80vw;
+  max-height: 80vh;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.modal__image-caption {
+  background-color: rgba(33, 33, 33, 1);
+  border-radius: 8px;
+  position: absolute;
+  padding: 4px 8px 4px 8px;
+  color: white;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 8px 0 0;
+  max-width: 350px;
+}
+
+.modal__close-image-btn {
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/close-icon-white.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border-style: none;
+  position: absolute;
+  padding: 0;
+}
+
+.modal__close-image-btn:hover {
+  cursor: pointer;
+  opacity: 40%;
+}
+
 @media screen and (max-width: 630px) {
+  .modal__image {
+    max-width: 288px;
+  }
+
+  .modal__image-caption {
+    max-width: 200px;
+    font-size: 16px;
+  }
+
+  .modal__image-with-btn {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+
+  .modal__close-image-btn {
+    position: static;
+  }
+
   .modal__container {
     padding: 12px;
   }
