@@ -116,17 +116,22 @@
   cursor: pointer;
 }
 
+.modal__preview-container {
+  max-width: 1080px;
+  position: relative;
+}
+
 .modal__image {
   max-width: 80vw;
   max-height: 80vh;
   width: 100%;
   border-radius: 8px;
+  position: relative;
 }
 
 .modal__image-caption {
   background-color: rgba(33, 33, 33, 1);
   border-radius: 8px;
-  position: absolute;
   padding: 4px 8px 4px 8px;
   color: white;
   font-family: "Poppins", Arial, sans-serif;
@@ -136,6 +141,7 @@
   line-height: 1.2;
   margin: 8px 0 0;
   max-width: 350px;
+  position: absolute;
 }
 
 .modal__close-image-btn {

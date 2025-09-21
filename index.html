@@ -59,7 +59,7 @@
                   type="button"
                   class="card__delete-btn"
                 ></button>
-                <img class="card__image" />
+                <img class="card__image" alt="" />
                 <div class="card__content">
                   <h2 class="card__text"></h2>
                   <button
@@ -90,6 +90,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your name"
+                required
               />
             </label>
             <label for="profile-description-input" class="modal__label">
@@ -125,6 +126,7 @@
                 type="url"
                 class="modal__input"
                 placeholder="Paste a link to the picture"
+                required
               />
             </label>
             <label for="card-caption-input" class="modal__label">
@@ -134,6 +136,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
+                required
               />
             </label>
             <button
@@ -147,9 +150,9 @@
         </div>
       </div>
       <div class="modal" id="image-modal">
-        <div class="modal__image-container">
+        <div class="modal__preview-container">
           <div class="modal__image-with-btn">
-            <img src="" class="modal__image" />
+            <img src="#" alt="image preview" class="modal__image" />
             <button type="button" class="modal__close-image-btn"></button>
           </div>
           <h2 class="modal__image-caption"></h2>
