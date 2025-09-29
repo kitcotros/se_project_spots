@@ -12,4 +12,4 @@ This is the third project of the fulltime Software Engineering program at Triple
 
 ### Link to project:
 
-[Spots](https://kit-ros.github.io/se_project_spots/)
+[Spots](https://kitcotros.github.io/se_project_spots/)
