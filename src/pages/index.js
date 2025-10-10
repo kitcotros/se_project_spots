@@ -1,3 +1,11 @@
+import "./index.css";
+import {
+  enableValidation,
+  settings,
+  disableButton,
+  resetValidation,
+} from "../scripts/validation.js";
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -176,3 +184,5 @@ function handleEscapeCloseModal(event) {
     }
   });
 }
+
+enableValidation(settings);

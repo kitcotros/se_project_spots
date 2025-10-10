@@ -11,20 +11,22 @@
     />
     <meta name="author" content="kit cotros" />
     <meta name="keywords" content="social, spots" />
-    <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <div class="page">
       <header class="header">
-        <img class="header__image" src="./images/Logo.svg" alt="spots logo" />
+        <img
+          class="header__image"
+          src="<%=require('./images/Logo.svg')%>"
+          alt="spots logo"
+        />
       </header>
       <main class="content">
         <section class="profile">
           <div class="profile__main">
             <img
               class="profile__image"
-              src="./images/avatar.jpg"
+              src="<%=require('./images/avatar.jpg')%>"
               alt="profile image"
             />
             <div class="profile__head">
@@ -35,7 +37,7 @@
               <div class="profile__head-edit" id="edit-profile-btn">
                 <img
                   class="profile__head-edit-icon"
-                  src="./images/edit-icon.svg"
+                  src="<%=require('./images/edit-icon.svg')%>"
                   alt="edit profile icon"
                 />
                 <p class="profile__head-edit-text">Edit Profile</p>
@@ -45,7 +47,7 @@
           <button class="profile__new-post-button">
             <img
               class="profile__new-post-button-plus"
-              src="./images/plus-icon.svg"
+              src="<%=require('./images/plus-icon.svg')%>"
               alt="plus icon"
             />New Post
           </button>
@@ -173,7 +175,5 @@
         </div>
       </div>
     </div>
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/validation.js"></script>
   </body>
 </html>

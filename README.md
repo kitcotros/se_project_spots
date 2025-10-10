@@ -1,6 +1,6 @@
 # Project 3: Spots
 
-This is the third project of the fulltime Software Engineering program at TripleTen. It is the profile page of a social media website named Spots. A main focus of this project was responsive design.
+This is the third project of the fulltime Software Engineering program at TripleTen. It is the profile page of a social media website named Spots.
 
 ### Project Features
 
@@ -9,7 +9,8 @@ This is the third project of the fulltime Software Engineering program at Triple
 - BEM Methodology
 - Responsive Design
 - Flexbox and Grid
+- JavaScript
 
-### Link to project:
+### View the project:
 
 [Spots](https://kitcotros.github.io/se_project_spots/)
