@@ -5,33 +5,15 @@ import {
   disableButton,
   resetValidation,
 } from "../scripts/validation.js";
+import Api from "../utils/api.js";
 
-const initialCards = [
-  {
-    name: "Val Thorens",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "0307662c-e5c7-4385-9413-db52ab77dee9",
+    "Content-Type": "application/json",
   },
-  {
-    name: "Restaurant terrace",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
-  },
-  {
-    name: "An outdoor cafe",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
-  },
-  {
-    name: "A very long bridge, over the forest and through the trees",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
-  },
-  {
-    name: "Tunnel with morning light",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
-  },
-  {
-    name: "Mountain house",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
-];
+});
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileBtn = document.querySelector(".profile__head-edit");
@@ -41,6 +23,7 @@ const newPostModal = document.querySelector("#new-post-modal");
 const newPostBtn = document.querySelector(".profile__new-post-button");
 const newPostClose = newPostModal.querySelector(".modal__close-btn");
 
+const profileAvatarActive = document.querySelector(".profile__image");
 const profileNameActive = document.querySelector(".profile__head-text-name");
 const profileBioActive = document.querySelector(".profile__head-text-bio");
 
@@ -101,6 +84,22 @@ function getCardElement(data) {
   return cardElement;
 }
 
+api
+  .getInitialCards()
+  .then((cards) => {
+    cards.forEach((card) => {
+      const initialCard = getCardElement(card);
+      cardsList.append(initialCard);
+    });
+  })
+  .catch(console.error);
+
+api.getUserInfo().then((res) => {
+  profileNameActive.textContent = res.name;
+  profileBioActive.textContent = res.about;
+  profileAvatarActive.src = res.avatar;
+});
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
   modal.addEventListener("click", handleOverlayCloseModal);
@@ -131,12 +130,6 @@ newPostBtn.addEventListener("click", function () {
 
 newPostClose.addEventListener("click", function () {
   closeModal(newPostModal);
-});
-
-initialCards.forEach(function (card) {
-  const initialCard = getCardElement(card);
-
-  cardsList.append(initialCard);
 });
 
 profileForm.addEventListener("submit", function (evt) {
