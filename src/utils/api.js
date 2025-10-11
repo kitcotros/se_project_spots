@@ -13,16 +13,20 @@ class Api {
 
   // other methods for working with the API
 
+  getAppInfo() {
+    return Promise.all([this.getInitialCards(), this.getUserInfo()]);
+  }
+
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
       headers: this._headers,
-    }).then((res) => res.json());
+    }).then(this._handleServerResponse);
   }
 
   getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
       headers: this._headers,
-    }).then((res) => res.json());
+    }).then(this._handleServerResponse);
   }
 
   editUserInfo({ name, about }) {
@@ -33,9 +37,7 @@ class Api {
         name,
         about,
       }),
-    }).then((res) => {
-      res.json();
-    });
+    }).then(this._handleServerResponse);
   }
 }
 

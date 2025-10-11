@@ -85,20 +85,18 @@ function getCardElement(data) {
 }
 
 api
-  .getInitialCards()
-  .then((cards) => {
+  .getAppInfo()
+  .then(([cards, user]) => {
     cards.forEach((card) => {
       const initialCard = getCardElement(card);
       cardsList.append(initialCard);
     });
+
+    profileNameActive.textContent = user.name;
+    profileBioActive.textContent = user.about;
+    profileAvatarActive.src = user.avatar;
   })
   .catch(console.error);
-
-api.getUserInfo().then((res) => {
-  profileNameActive.textContent = res.name;
-  profileBioActive.textContent = res.about;
-  profileAvatarActive.src = res.avatar;
-});
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
@@ -135,12 +133,19 @@ newPostClose.addEventListener("click", function () {
 profileForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
 
-  profileNameActive.textContent = profileNameInput.value;
-  profileBioActive.textContent = profileBioInput.value;
+  api
+    .editUserInfo({
+      name: profileNameInput.value,
+      about: profileBioInput.value,
+    })
+    .then((data) => {
+      profileNameActive.textContent = data.name;
+      profileBioActive.textContent = data.about;
 
-  disableButton(profileFormSaveBtn, settings);
+      disableButton(profileFormSaveBtn, settings);
 
-  closeModal(editProfileModal);
+      closeModal(editProfileModal);
+    });
 });
 
 postForm.addEventListener("submit", function (evt) {
