@@ -24,11 +24,20 @@
       <main class="content">
         <section class="profile">
           <div class="profile__main">
-            <img
-              class="profile__image"
-              src="<%=require('./images/avatar.jpg')%>"
-              alt="profile image"
-            />
+            <div class="profile__avatar-container">
+              <button class="profile__avatar-btn">
+                <img
+                  class="profile__pencil-icon"
+                  src="<%=require('./images/pencil-light.svg')%>"
+                  alt="pencil icon"
+                />
+              </button>
+              <img
+                class="profile__image"
+                src="<%=require('./images/avatar_placeholder.svg')%>"
+                alt="profile image"
+              />
+            </div>
             <div class="profile__head">
               <div class="head-top">
                 <h1 class="profile__head-text-name">Bessie Coleman</h1>
@@ -173,6 +182,51 @@
           </div>
           <h2 class="modal__image-caption"></h2>
         </div>
+      </div>
+    </div>
+    <div class="modal" id="avatar-modal">
+      <div class="modal__container">
+        <div class="modal__title-with-btn">
+          <h2 class="modal__title">Edit profile avatar</h2>
+          <button type="button" class="modal__close-btn"></button>
+        </div>
+        <form class="modal__form" id="avatar-form" novalidate>
+          <label for="avatar-input" class="modal__label">
+            Profile Picture
+            <input
+              id="avatar-input"
+              type="url"
+              class="modal__input"
+              placeholder="Paste the link to an image"
+              required
+            />
+            <span id="avatar-input-error" class="modal__error"></span>
+          </label>
+          <button
+            type="submit"
+            class="modal__submit-btn"
+            id="avatar-form-button"
+          >
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="modal" id="delete-modal">
+      <div class="modal__container modal__container_delete">
+        <div class="modal__title-with-btn modal__title-with-btn_delete">
+          <h2 class="modal__title modal__title_delete">
+            Are you sure you want to delete this image?
+          </h2>
+          <button
+            type="button"
+            class="modal__close-btn modal__close-btn_delete"
+          ></button>
+        </div>
+        <form class="modal__form modal__form_delete" id="delete-form">
+          <button type="submit" class="modal__delete-btn">Delete</button>
+          <button type="button" class="modal__cancel-btn">Cancel</button>
+        </form>
       </div>
     </div>
   </body>
